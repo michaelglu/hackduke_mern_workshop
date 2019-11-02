@@ -3,8 +3,10 @@ const app = express();
 const bodyParser=require("body-parser");
 const mongoose = require("./config/mongoose.js");
 const { User } = require("./models/user.js");
+const cors=require('cors');
 
 app.use(bodyParser.json());
+app.use(cors());
 app.get("/",(req,res)=>{
   res.send("HELLO WORLD!");
 })
